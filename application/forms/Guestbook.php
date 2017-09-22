@@ -11,6 +11,13 @@ class Application_Form_Guestbook extends Zend_Form
     public function init()
     {
         $this->setMethod('post');
+        // Add an User_name element
+        $this->addElement('text', 'User_name', array(
+            'label'      => 'Имя пользователя:',
+            'required'   => true,
+            'filters'    => array('StringTrim'),
+            )
+        );
         // Add an email element
         $this->addElement('text', 'email', array(
             'label'      => 'Почтовый ящик:',

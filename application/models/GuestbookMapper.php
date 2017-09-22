@@ -30,6 +30,7 @@ class Application_Model_GuestbookMapper
     public function save(Application_Model_Guestbook $guestbook)
     {
         $data = array(
+            'User_name'   => $guestbook->getUser_name(),
             'email'   => $guestbook->getEmail(),
             'comment' => $guestbook->getComment(),
             'created' => date('Y-m-d H:i:s'),
@@ -49,6 +50,7 @@ class Application_Model_GuestbookMapper
         }
         $row = $result->current();
         $guestbook->setId($row->id)
+            ->setUser_name($row->User_name)
             ->setEmail($row->email)
             ->setComment($row->comment)
             ->setCreated($row->created);
@@ -60,6 +62,7 @@ class Application_Model_GuestbookMapper
         foreach ($resultSet as $row) {
             $entry = new Application_Model_Guestbook();
             $entry->setId($row->id)
+                ->setUser_name($row->User_name)
                 ->setEmail($row->email)
                 ->setComment($row->comment)
                 ->setCreated($row->created)

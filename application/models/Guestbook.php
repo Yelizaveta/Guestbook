@@ -10,6 +10,7 @@ class Application_Model_Guestbook
 {
     protected $_comment;
     protected $_created;
+    protected $_User_name;
     protected $_email;
     protected $_id;
     protected $_mapper;
@@ -47,14 +48,23 @@ class Application_Model_Guestbook
         return $this;
     }
     public function setComment($text)
-    {
-        $this->_comment = (string) $text;
-        return $this;
-    }
+{
+    $this->_comment = (string) $text;
+    return $this;
+}
     public function getComment()
-    {
-        return $this->_comment;
-    }
+{
+    return $this->_comment;
+}
+    public function setUser_name($User_name)
+{
+    $this->_User_name = (string) $User_name;
+    return $this;
+}
+    public function getUser_name()
+{
+    return $this->_User_name;
+}
     public function setEmail($email)
     {
         $this->_email = (string) $email;
